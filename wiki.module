@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_form_alter().
+ */
+function wiki_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id === 'node_book_edit_form' && isset($form['book'])) {
+    // Open book outline
+    $form['book']['#open'] = TRUE;
+  }
+}
